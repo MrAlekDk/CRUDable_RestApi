@@ -8,17 +8,16 @@ const beers = [{id : 1,brand : "Carlsberg",type : "Blonde",strength : "Light"},
                 {id : 3,brand : "Grimbergen",type : "Double",strength : "Dark"}
             ];
 
+app.get("/beers",(req,res)=>{
 
+    res.send(beers)
+});
 
 app.get("/beers/:id",(req,res) =>{
     const id = parseFloat(req.params.id)
     res.send(beers.find(beer => beer.id ===id))
 });
 
-app.get("/beers",(req,res)=>{
-
-    res.send(beers)
-});
 
 app.post("/beers",(req,res)=>{
 
